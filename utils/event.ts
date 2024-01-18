@@ -10,8 +10,8 @@ export class SimpleEvent<T extends Record<string, any>> {
 
   /**
    * 监听事件
-   * @param {string} eventName
-   * @param {Function} cb 回调
+   * @param eventName
+   * @param cb 回调
    */
   on<K extends keyof T>(eventName: K, cb: (data: T[K]) => void) {
     if (typeof cb !== "function") {
@@ -32,8 +32,8 @@ export class SimpleEvent<T extends Record<string, any>> {
 
   /**
    * 取消绑定事件
-   * @param {string} eventName
-   * @param {Function} cb 回调
+   * @param eventName
+   * @param cb 回调
    */
   off<K extends keyof T>(eventName: K, cb: (data: T[K]) => void) {
     const cbList = this.cb[eventName]
@@ -44,8 +44,8 @@ export class SimpleEvent<T extends Record<string, any>> {
 
   /**
    * 触发事件
-   * @param {string} eventName
-   * @param {Object} eventData
+   * @param  eventName
+   * @param  eventData
    */
   trigger<K extends keyof T>(eventName: K, eventData?: T[K]) {
     const cbList = this.cb[eventName]
