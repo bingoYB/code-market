@@ -280,7 +280,7 @@ export default forwardRef(
     useEffect(() => {
       const container = containerRef.current;
 
-      const brickDom = [...container.children];
+      const brickDom = [...container.children] as  HTMLElement[];
       let columNum = 0;
       let minHeight = Infinity;
 
@@ -366,6 +366,7 @@ export default forwardRef(
           }
 
           // 获取真实 DOM是scrollTop， window是scrollY
+          // @ts-ignore
           setScrollTop(target?.scrollTop || target?.scrollY || 0);
         },
         100,
