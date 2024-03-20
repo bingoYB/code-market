@@ -2,7 +2,7 @@
  * Simple Event Dispatcher
  * @template T - Type of events and their corresponding data
  */
-class SimpleEvent {
+export class SimpleEvent {
   /**
    * @type {Object.<string, Function[]>}
    */
