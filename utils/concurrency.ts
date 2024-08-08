@@ -43,7 +43,7 @@ export class ConcurrencyController {
           if (nextTask) {
             this.currentRunning++;
             await nextTask();
-            this.concurrentLimit--;
+            this.currentRunning--;
   
             // 任务结束执行下一个任务
             this.next();
