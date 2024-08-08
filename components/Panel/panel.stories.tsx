@@ -34,7 +34,9 @@ function  Example() {
 
     return (
       <div>
-        <Panel title="test panel" position={position} onDragEnd={onDragEnd}/>
+        <Panel title="test panel" position={position} onDragEnd={onDragEnd}>
+            面板内容
+        </Panel>
       </div>
     );
 }

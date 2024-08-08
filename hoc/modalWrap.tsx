@@ -6,7 +6,7 @@ import { type ModalProps } from "antd";
 let modalList: {
   name?: string;
   close: () => void;
-}[] = [];c
+}[] = [];
 
 export interface ModalFCProps extends ModalProps {
   visibleControl?: boolean;
