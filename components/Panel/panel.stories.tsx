@@ -23,20 +23,18 @@ export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Main: StoryObj<typeof Panel> = {
-  render: (args) => {
-    return <Example/>
-  },
-};
-
-
-function  Example() {
-    const {position, onDragEnd} = usePanelControl();
+  render: function Render(args){
+    const {position, onDragEnd} = usePanelControl({
+      x: 100,
+      y: 100
+    });
 
     return (
-      <div>
+      <div style={{height: 500}}>
         <Panel title="test panel" position={position} onDragEnd={onDragEnd}>
             面板内容
         </Panel>
       </div>
     );
-}
+  },
+};

@@ -13,6 +13,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.min.css"
 import React, { useEffect, useRef } from "react"
 
 export interface ICodeBlockProps {
+  /** 代码内容 */
   code: string
   /** 高亮的行数：5, [1, 2, 3] 1-5 */
   highlightLines?: (number | string)[]

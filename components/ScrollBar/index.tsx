@@ -3,14 +3,21 @@ import { useCallback, useEffect, useRef } from "react";
 import classNames from "classnames";
 import styles from "./index.module.less";
 import { throttle } from "lodash";
+import React  from "react";
 
-export default function ScrollWrap({
+interface ScrollBarWrapProps {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+  barStyle?: React.CSSProperties;
+}
+export function ScrollBarWrap({
   children,
   className = "",
   id,
   barStyle = {},
   ...rest
-}) {
+}: ScrollBarWrapProps & React.HTMLAttributes<HTMLDivElement>) {
   const scrollContentRef = useRef();
   const scrollBarRef = useRef();
   const onScroll = useCallback((e) => {

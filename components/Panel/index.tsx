@@ -154,9 +154,9 @@ function DragableContent({
   )
 }
 
-export function usePanelControl() {
+export function usePanelControl(initialPosition?: Coordinates) {
   const [ visible, setVisible ] = useState(true);
-  const [position, setPosition] = useState({x: 0, y: 0});
+  const [position, setPosition] = useState(initialPosition || {x: 0, y: 0});
 
   const onClosePanel = () => {
     setVisible(false)

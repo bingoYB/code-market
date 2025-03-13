@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { isEnter } from "../utils/keyboard";
+import { isEnter } from "../utils/keyBoard";
 
-export function useChnieseInput() {
+export function useChineseInput() {
   // 当前拼音输入的参数
   const [isChineseInput, setChineseInput] = useState(false);
   const onCompositionStart = () => setChineseInput(true);
